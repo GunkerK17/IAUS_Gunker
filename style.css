@@ -141,27 +141,45 @@ html, body {
     font-weight: 900;
     margin-bottom: 18px;
 }
+/* ============================
+   COUNTDOWN – MOBILE FIX
+============================ */
 
 .countdown-timer {
     display: flex;
-    gap: 18px;
+    justify-content: center;
+    flex-wrap: wrap;      /* Cho xuống dòng gọn */
+    gap: 12px;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
 }
 
 .time-box {
-    background: rgba(255,255,255,0.2);
-    padding: 14px;
-    width: 90px;
-    border-radius: 12px;
-    border: 2px solid rgba(255,255,255,0.3);
-    backdrop-filter: blur(5px);
+    flex: 1 1 calc(50% - 12px);   /* 2 cột đều nhau */
+    max-width: 150px;
     text-align: center;
+    padding: 12px 0;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.25);
+    border: 2px solid rgba(255,255,255,0.4);
+    backdrop-filter: blur(6px);
 }
 
-.time-box span {
-    font-size: 30px;
-    font-weight: 900;
+/* Mobile nhỏ */
+@media (max-width: 430px) {
+    .time-box {
+        flex: 1 1 calc(50% - 10px); 
+        max-width: 140px;
+    }
 }
 
+@media (max-width: 360px) {
+    .time-box {
+        flex: 1 1 100%;   /* 1 cột khi màn quá nhỏ */
+        max-width: 100%;
+    }
+}
 .time-box label {
     font-size: 13px;
     font-weight: 700;
@@ -958,17 +976,17 @@ html, body {
     padding: 80px 0 60px;
     color: #fff;
     text-align: left;
+    overflow: hidden; /* Quan trọng: tránh bị tràn khi mobile */
 }
 
 /* Background */
 .footer-bg {
     position: absolute;
     inset: 0;
-    background: url("Picture/ho-chi-minh-city.jpg") center -340px / cover no-repeat;
+    background: url("Picture/ho-chi-minh-city.jpg") center / cover no-repeat;
     z-index: 1;
+    opacity: 0.95;
 }
-
-
 
 /* Overlay */
 .footer-overlay {
@@ -978,11 +996,11 @@ html, body {
     z-index: 2;
 }
 
-/* Content */
+/* Content wrapper */
 .footer-content {
     position: relative;
     z-index: 3;
-    width: 90%;
+    width: 92%;
     max-width: 1300px;
     margin: 0 auto;
 }
@@ -991,35 +1009,36 @@ html, body {
 .footer-logo {
     width: 300px;
     max-width: 90%;
-    margin-bottom: 20px;
-    margin-left: -16px;
+    margin-bottom: 25px;
 }
 
-/* RIGHT INFO */
+/* RIGHT TEXT INFO */
 .footer-right p {
     font-size: 16px;
-    line-height: 1.8;
+    line-height: 1.7;
     margin: 6px 0;
+    padding: 0 5px;
 }
 
 .footer-right strong {
-    color: #ffd9d9;
+    color: #ffe6e6;
 }
 
 /* COPYRIGHT */
 .footer-copy {
     text-align: center;
-    margin-top: 35px;
+    margin-top: 30px;
     font-size: 14px;
     opacity: 0.85;
 }
+
 
 
 /* ======================================
    RESPONSIVE FOOTER
 ====================================== */
 
-/* Tablet ngang */
+/* Laptop nhỏ / Tablet ngang */
 @media (max-width: 1024px) {
     .footer-logo {
         width: 260px;
@@ -1036,11 +1055,12 @@ html, body {
 
     .footer-logo {
         margin: 0 auto 25px;
-        width: 240px;
+        width: 230px;
     }
 
     .footer-right p {
         font-size: 15px;
+        line-height: 1.6;
     }
 }
 
@@ -1048,27 +1068,37 @@ html, body {
 @media (max-width: 600px) {
 
     .footer-logo {
-        width: 220px;
+        width: 200px;
     }
 
     .footer-right p {
         font-size: 14px;
-        line-height: 1.6;
+        line-height: 1.5;
     }
 
     .footer-copy {
         font-size: 12px;
     }
+
+    /* Giảm padding để không bị kéo dài trang */
+    .footer-section {
+        padding: 60px 0 40px;
+    }
 }
 
-/* Mobile nhỏ */
+/* Mobile nhỏ – iPhone SE */
 @media (max-width: 390px) {
     .footer-logo {
-        width: 180px;
+        width: 170px;
     }
 
     .footer-right p {
         font-size: 13px;
+        line-height: 1.45;
+    }
+
+    .footer-section {
+        padding: 55px 0 35px;
     }
 }
 
@@ -1165,3 +1195,4 @@ html, body {
 /* ===============================
    KẾT THÚC COUNTDOWN
 ================================ */
+
