@@ -1,35 +1,33 @@
-/* ===============================
-   RESET + FIX OVERFLOW GLOBAL
-================================= */
-html, body {
+/* ======================================
+   RESET CƠ BẢN
+====================================== */
+* {
     margin: 0;
     padding: 0;
-    overflow-x: hidden !important;
-    width: 100%;
-    font-family: Arial, sans-serif;
-}
-
-* {
-    max-width: 100% !important;
     box-sizing: border-box;
 }
 
-/* ===============================
-   SECTION 1 — OFFER HERO (FIXED)
-================================= */
+html, body {
+    width: 100%;
+    overflow-x: hidden !important;
+    font-family: Arial, sans-serif;
+}
+
+/* =======================================================
+   SECTION 1 — HERO OFFER (PC + MOBILE FIXED PERFECT)
+======================================================= */
 
 .offer-section {
     position: relative;
     width: 100%;
-    min-height: 95vh; /* fix mobile */
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 40px 80px;
+    min-height: 95vh;
     background: url("Picture/Ladipage.png") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
 }
 
-/* overlay */
 .offer-overlay {
     position: absolute;
     inset: 0;
@@ -37,15 +35,37 @@ html, body {
     z-index: 1;
 }
 
-/* content */
-.offer-content {
+/* WRAPPER 2 CỘT */
+.offer-wrapper {
     position: relative;
     z-index: 2;
-    max-width: 540px;
-    color: #fff;
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    align-items: center;
 }
 
-/* TITLE */
+/* ============================
+       CỘT TRÁI
+============================ */
+.offer-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* ============================
+       CỘT PHẢI
+============================ */
+.offer-right {
+    flex: 1;
+    color: #fff;
+    max-width: 520px;
+}
+
+/* TITLES */
 .offer-title {
     font-size: 42px;
     font-weight: 800;
@@ -55,107 +75,157 @@ html, body {
 .offer-highlight {
     font-size: 50px;
     font-weight: 800;
-    color: #f6c66c;
-    margin: 10px 0 25px;
+    color: #F6C66C;
+    margin: 12px 0 25px;
 }
 
 .offer-sub {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 700;
-    margin-bottom: 15px;
+    margin: 18px 0;
 }
 
-/* OPTION BOX */
+/* OPTIONS */
 .offer-option {
     display: flex;
     align-items: center;
     background: #fff;
-    padding: 15px 22px;
-    width: 100%;              /* FIX */
-    max-width: 420px;         /* FIX */
-    border-radius: 12px;
-    margin-bottom: 18px;
-    font-size: 22px;
-    font-weight: 700;
     color: #0C2A6B;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    font-weight: 700;
+    padding: 14px 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
 .offer-option img {
-    width: 28px;
-    flex-shrink: 0; /* tránh bị méo */
+    width: 26px;
     margin-right: 12px;
 }
 
-/* NOTE */
+/* NOTE + BUTTON */
 .offer-note {
     font-size: 15px;
-    margin: 18px 0;
+    margin: 15px 0 20px;
 }
 
-/* BUTTON */
 .offer-btn {
-    padding: 14px 35px;
-    font-size: 20px;
-    font-weight: 700;
     background: #C02035;
-    color: #fff;
+    padding: 14px 34px;
     border-radius: 8px;
+    font-weight: 700;
+    font-size: 20px;
+    color: #fff;
     display: inline-block;
-    transition: .25s;
+    transition: 0.25s;
 }
 
 .offer-btn:hover {
     background: #8A1323;
 }
 
-/* ===============================
-   RESPONSIVE
-================================= */
+/* =======================================================
+   COUNTDOWN STYLE (ĐẸP + NỔI)
+======================================================= */
 
-/* Tablet */
+.footer-countdown-box {
+    text-align: center;
+    color: #fff;
+}
+
+.countdown-title {
+    font-size: 26px;
+    font-weight: 900;
+    margin-bottom: 18px;
+}
+
+.countdown-timer {
+    display: flex;
+    gap: 18px;
+}
+
+.time-box {
+    background: rgba(255,255,255,0.2);
+    padding: 14px;
+    width: 90px;
+    border-radius: 12px;
+    border: 2px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(5px);
+    text-align: center;
+}
+
+.time-box span {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.time-box label {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* =======================================================
+   RESPONSIVE — MOBILE FIXED PERFECT
+======================================================= */
+
 @media (max-width: 992px) {
-    .offer-section {
-        padding: 60px 30px;
-        justify-content: center;
+    .offer-wrapper {
+        flex-direction: column;
         text-align: center;
+        gap: 40px;
     }
 
-    .offer-content {
-        max-width: 92%;
-        margin: 0 auto;
+    .offer-right,
+    .offer-left {
+        max-width: 100%;
+        justify-content: center;
     }
 
     .offer-title { font-size: 34px; }
     .offer-highlight { font-size: 42px; }
-    .offer-option { 
-        font-size: 18px;
-        justify-content: center;
-    }
 }
 
-/* Mobile large */
 @media (max-width: 600px) {
-    .offer-title { font-size: 28px; }
+
+    .offer-title { font-size: 26px; }
     .offer-highlight { font-size: 34px; }
+    .offer-sub { font-size: 18px; }
 
     .offer-option {
         font-size: 16px;
         padding: 12px 16px;
-        max-width: 100%;      /* FIX vỡ khung */
+        max-width: 100%;
+        justify-content: center;
     }
 
     .offer-btn {
-        font-size: 17px;
+        font-size: 18px;
         padding: 12px 26px;
+    }
+
+    /* COUNTDOWN chỉnh lại đẹp mobile */
+    .countdown-timer {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .time-box {
+        width: 75px;
+        padding: 10px;
+    }
+
+    .time-box span {
+        font-size: 24px;
     }
 }
 
-/* Mobile nhỏ */
 @media (max-width: 390px) {
-    .offer-title { font-size: 24px; }
-    .offer-highlight { font-size: 30px; }
-    .offer-option { font-size: 15px; }
+    .offer-title { font-size: 22px; }
+    .offer-highlight { font-size: 28px; }
 }
 
 
