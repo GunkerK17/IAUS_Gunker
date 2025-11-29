@@ -1,0 +1,1097 @@
+/* ===============================
+   RESET + FIX OVERFLOW GLOBAL
+================================= */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden !important;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+* {
+    max-width: 100% !important;
+    box-sizing: border-box;
+}
+
+/* ===============================
+   SECTION 1 — OFFER HERO (FIXED)
+================================= */
+
+.offer-section {
+    position: relative;
+    width: 100%;
+    min-height: 95vh; /* fix mobile */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 40px 80px;
+    background: url("Picture/Ladipage.png") center/cover no-repeat;
+}
+
+/* overlay */
+.offer-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 1;
+}
+
+/* content */
+.offer-content {
+    position: relative;
+    z-index: 2;
+    max-width: 540px;
+    color: #fff;
+}
+
+/* TITLE */
+.offer-title {
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.offer-highlight {
+    font-size: 50px;
+    font-weight: 800;
+    color: #f6c66c;
+    margin: 10px 0 25px;
+}
+
+.offer-sub {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* OPTION BOX */
+.offer-option {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 15px 22px;
+    width: 100%;              /* FIX */
+    max-width: 420px;         /* FIX */
+    border-radius: 12px;
+    margin-bottom: 18px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #0C2A6B;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+}
+
+.offer-option img {
+    width: 28px;
+    flex-shrink: 0; /* tránh bị méo */
+    margin-right: 12px;
+}
+
+/* NOTE */
+.offer-note {
+    font-size: 15px;
+    margin: 18px 0;
+}
+
+/* BUTTON */
+.offer-btn {
+    padding: 14px 35px;
+    font-size: 20px;
+    font-weight: 700;
+    background: #C02035;
+    color: #fff;
+    border-radius: 8px;
+    display: inline-block;
+    transition: .25s;
+}
+
+.offer-btn:hover {
+    background: #8A1323;
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+
+/* Tablet */
+@media (max-width: 992px) {
+    .offer-section {
+        padding: 60px 30px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .offer-content {
+        max-width: 92%;
+        margin: 0 auto;
+    }
+
+    .offer-title { font-size: 34px; }
+    .offer-highlight { font-size: 42px; }
+    .offer-option { 
+        font-size: 18px;
+        justify-content: center;
+    }
+}
+
+/* Mobile large */
+@media (max-width: 600px) {
+    .offer-title { font-size: 28px; }
+    .offer-highlight { font-size: 34px; }
+
+    .offer-option {
+        font-size: 16px;
+        padding: 12px 16px;
+        max-width: 100%;      /* FIX vỡ khung */
+    }
+
+    .offer-btn {
+        font-size: 17px;
+        padding: 12px 26px;
+    }
+}
+
+/* Mobile nhỏ */
+@media (max-width: 390px) {
+    .offer-title { font-size: 24px; }
+    .offer-highlight { font-size: 30px; }
+    .offer-option { font-size: 15px; }
+}
+
+
+
+
+/* ======================================
+   SECTION 2 — TESTIMONIALS (FULL RESPONSIVE)
+====================================== */
+
+.testimonial-section {
+    padding: 80px 0;
+    background: #fff;
+    text-align: center;
+}
+
+.testimonial-title {
+    font-size: 34px;
+    font-weight: 800;
+    color: #7A1A1A;
+    margin-bottom: 50px;
+}
+
+/* GRID LAYOUT */
+.testimonial-container {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+/* CARD STYLE */
+.testimonial-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.07);
+}
+
+/* Hover effect card */
+.testimonial-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* IMAGE STYLE */
+.testimonial-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 10px;
+    padding: 5px;
+    background: #fff;
+    transition: .3s ease;
+}
+
+/* Hover zoom */
+.testimonial-card:hover .testimonial-img {
+    transform: scale(1.04);
+}
+
+/* NAME */
+.testimonial-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #7A1A1A;
+    margin-top: 15px;
+}
+
+/* ROLE */
+.testimonial-role {
+    font-size: 14px;
+    color: #7A1A1A;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+/* TEXT BODY */
+.testimonial-text {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.55;
+    margin-top: 6px;
+    text-align: left;
+}
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+
+/* Tablet đứng ngang — iPad / Samsung Tab */
+@media (max-width: 1100px) {
+    .testimonial-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+}
+
+/* Tablet đứng — iPad Mini */
+@media (max-width: 900px) {
+    .testimonial-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+    }
+
+    .testimonial-img {
+        height: 220px;
+    }
+}
+
+/* Mobile lớn — iPhone XR / 11 / 12 / Samsung A */
+@media (max-width: 600px) {
+    .testimonial-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .testimonial-img {
+        height: 240px;
+    }
+
+    .testimonial-title {
+        font-size: 28px;
+    }
+}
+
+/* Mobile nhỏ — iPhone SE */
+@media (max-width: 390px) {
+    .testimonial-img {
+        height: 200px;
+    }
+
+    .testimonial-title {
+        font-size: 24px;
+    }
+}
+
+/* ======================================
+   SECTION 3 — BRAND INTRO (FULL RESPONSIVE)
+====================================== */
+
+.brand-section {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Background đẹp chuẩn */
+    background: url("Picture/The Sydney Opera House – in pictures.jpg") center/cover no-repeat;
+}
+
+/* Overlay đỏ IAUS */
+.brand-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgb(17 9 9 / 55%); /* chỉnh lại đẹp hơn */
+    z-index: 1;
+}
+
+/* LOGO */
+.brand-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.brand-logo {
+    width: 420px;
+    max-width: 90%;
+    opacity: 0;
+    animation: fadeLogo 1.4s ease forwards;
+}
+
+/* Fade-in animation */
+@keyframes fadeLogo {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+
+/* Tablet đứng */
+@media (max-width: 992px) {
+    .brand-section {
+        height: 55vh;
+    }
+
+    .brand-logo {
+        width: 300px;
+    }
+}
+
+/* Mobile lớn */
+@media (max-width: 600px) {
+    .brand-section {
+        height: 45vh;
+    }
+
+    .brand-logo {
+        width: 230px;
+    }
+}
+
+/* Mobile nhỏ — iPhone SE */
+@media (max-width: 390px) {
+    .brand-section {
+        height: 40vh;
+    }
+
+    .brand-logo {
+        width: 200px;
+    }
+}
+
+/* ======================================
+   SECTION 4 — PROGRAM LIST
+====================================== */
+
+.program-section {
+    padding-bottom: 2px;
+    padding-top: 20px;
+    background: #fff;
+    text-align: center;
+    
+}
+
+.program-title {
+    font-size: 34px;
+    font-weight: 800;
+    color: #7A1A1A;
+    margin-bottom: 50px;
+}
+
+/* Layout 3 cột */
+.program-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+
+/* LEFT + RIGHT */
+.program-left,
+.program-right {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* BOX STYLE */
+.program-box {
+    padding: 18px 28px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 18px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: .25s ease;
+}
+
+/* Hover nhẹ */
+.program-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.program-box.yellow {
+    background: #F6C56B;
+    color: #7A1A1A;
+}
+
+.program-box.red {
+    background: #7A1A1A;
+    color: white;
+}
+
+/* CENTER IMAGE */
+.program-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.program-img {
+    width: 650px;
+    max-width: 100%;
+}
+
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+
+/* Tablet ngang */
+@media (max-width: 1100px) {
+    .program-wrapper {
+        gap: 40px;
+    }
+
+    .program-img {
+        width: 460px;
+    }
+}
+
+/* Tablet đứng */
+@media (max-width: 900px) {
+    .program-wrapper {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .program-img {
+        width: 350px;
+    }
+
+    .program-left,
+    .program-right {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+}
+
+/* Mobile lớn */
+@media (max-width: 600px) {
+
+    .program-title {
+        font-size: 28px;
+    }
+
+    .program-box {
+        width: 90%;
+        font-size: 16px;
+        padding: 14px 20px;
+    }
+
+    .program-img {
+        width: 260px;
+    }
+}
+
+/* Mobile nhỏ */
+@media (max-width: 390px) {
+    .program-section {
+        padding: 60px 0;
+    }
+
+    .program-img {
+        width: 220px;
+    }
+}
+/* =======================
+   BACKGROUND
+======================= */
+.benefit-section {
+    position: relative;
+    padding: 90px 0;
+    background: url("Picture/class.jpg") center/cover no-repeat;
+}
+
+.benefit-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+}
+
+.benefit-inner {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+
+/* TITLE */
+.benefit-title {
+    font-size: 42px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 60px;
+}
+
+/* =======================
+   CARD LAYOUT
+======================= */
+.benefit-row {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-bottom: 40px;
+}
+
+/* CARD BOX */
+.benefit-card {
+    background: #fff;
+    width: 300px;
+    padding: 35px 22px;
+    border-radius: 14px;
+    position: relative;
+    text-align: left;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+/* NUMBER BADGE */
+.benefit-card .num {
+    position: absolute;
+    top: -20px;
+    left: 18px;
+    padding: 10px 20px;
+    font-size: 22px;
+    font-weight: 900;
+    border-radius: 8px;
+}
+
+/* COLORS */
+.red .num {
+    background: #7A1A1A;
+    color: #fff;
+}
+
+.yellow .num {
+    background: #F6C56B;
+    color: #7A1A1A;
+}
+
+/* TEXT */
+.benefit-card p {
+    font-size: 17px;
+    font-weight: 700;
+    color: #7A1A1A;
+    margin-top: 20px;
+    line-height: 1.4;
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+
+/* Tablet đứng */
+@media (max-width: 900px) {
+    .benefit-title {
+        font-size: 34px;
+    }
+
+    .benefit-row {
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+
+    .benefit-card {
+        width: 45%;
+        min-width: 260px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .benefit-card {
+        width: 100%;
+    }
+
+    .benefit-title {
+        font-size: 28px;
+    }
+}
+
+
+/* ======================================
+   SECTION 6 — COURSE SAMPLES
+====================================== */
+
+.course-sample-section {
+    padding: 80px 0;
+    background: #fff;
+    text-align: center;
+}
+
+/* TITLE */
+.course-sample-title {
+    font-size: 34px;
+    font-weight: 800;
+    color: #7A1A1A;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+}
+
+/* CARD WRAPPER */
+.sample-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    width: 90%;
+    max-width: 1400px;
+    margin: auto;
+}
+
+/* CARD STYLE */
+.sample-card {
+    width: 350px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    transition: .25s ease;
+}
+
+/* Hover */
+.sample-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.18);
+}
+
+/* IMAGE */
+.sample-img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+/* HEADER (RED TOP) */
+.sample-header {
+    background: #7A1A1A;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 16px 20px;
+}
+
+/* BODY */
+.sample-body {
+    padding: 20px 25px 30px;
+    text-align: left;
+}
+
+.sample-body ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.sample-body li {
+    margin-bottom: 12px;
+    line-height: 1.4;
+    position: relative;
+}
+
+/* CUSTOM BULLET */
+.sample-body li::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    background: #7A1A1A;
+    border-radius: 50%;
+    position: absolute;
+    left: -14px;
+    top: 8px;
+}
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+
+/* Tablet ngang */
+@media (max-width: 1100px) {
+    .sample-wrapper {
+        gap: 25px;
+    }
+    .sample-card {
+        width: 300px;
+    }
+}
+
+/* Tablet đứng */
+@media (max-width: 900px) {
+    .sample-wrapper {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .sample-card {
+        width: 45%;
+        max-width: 320px;
+    }
+}
+
+/* Mobile lớn */
+@media (max-width: 600px) {
+
+    .sample-wrapper {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .sample-card {
+        width: 90%;
+    }
+
+    .course-sample-title {
+        font-size: 28px;
+    }
+}
+
+/* Mobile nhỏ */
+@media (max-width: 390px) {
+    .sample-card {
+        width: 95%;
+    }
+}
+
+
+
+/* ======================================
+   SECTION 7 — PARTNERS (FULL RESPONSIVE)
+====================================== */
+/* ===============================
+   SECTION 7 — PARTNERS
+================================ */
+.partner-section {
+    position: relative;
+    width: 100%;
+    padding: 80px 0 100px;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Background phía sau */
+.partner-bg {
+    position: absolute;
+    inset: 0;
+    background: url("Picture/logo doi tacc.png") center/cover no-repeat;
+    z-index: 1;
+    filter: brightness(0.5);
+}
+
+/* Overlay tối */
+.partner-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgb(0 0 0 / 55%);
+    z-index: 2;
+}
+
+/* Nội dung */
+.partner-content {
+    position: relative;
+    z-index: 3;
+}
+
+.partner-title {
+    font-size: 36px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 40px;
+}
+
+/* Box trắng chứa logo */
+.partner-box {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 40px 50px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Ảnh chứa nhiều logo */
+.partner-main-logo {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* ========= RESPONSIVE ========== */
+
+/* Tablet */
+@media (max-width: 992px) {
+    .partner-title {
+        font-size: 32px;
+    }
+    .partner-box {
+        padding: 30px 30px;
+    }
+}
+
+/* Mobile lớn */
+@media (max-width: 768px) {
+    .partner-title {
+        font-size: 28px;
+    }
+    .partner-box {
+        padding: 25px 20px;
+    }
+}
+
+/* Mobile nhỏ */
+@media (max-width: 480px) {
+    .partner-title {
+        font-size: 24px;
+    }
+}
+
+/* ======================================
+   SECTION 8 — FOOTER
+====================================== */
+
+.footer-section {
+    position: relative;
+    width: 100%;
+    padding: 80px 0 60px;
+    color: #fff;
+    text-align: left;
+}
+
+/* Background */
+.footer-bg {
+    position: absolute;
+    inset: 0;
+    background: url("Picture/ho-chi-minh-city.jpg") center -340px / cover no-repeat;
+    z-index: 1;
+}
+
+
+
+/* Overlay */
+.footer-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgb(0 0 0 / 55%);
+    z-index: 2;
+}
+
+/* Content */
+.footer-content {
+    position: relative;
+    z-index: 3;
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* LEFT LOGO */
+.footer-logo {
+    width: 300px;
+    max-width: 90%;
+    margin-bottom: 20px;
+    margin-left: -16px;
+}
+
+/* RIGHT INFO */
+.footer-right p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 6px 0;
+}
+
+.footer-right strong {
+    color: #ffd9d9;
+}
+
+/* COPYRIGHT */
+.footer-copy {
+    text-align: center;
+    margin-top: 35px;
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+
+/* ======================================
+   RESPONSIVE FOOTER
+====================================== */
+
+/* Tablet ngang */
+@media (max-width: 1024px) {
+    .footer-logo {
+        width: 260px;
+    }
+}
+
+/* Tablet đứng */
+@media (max-width: 768px) {
+
+    .footer-section {
+        text-align: center;
+        padding: 70px 0 50px;
+    }
+
+    .footer-logo {
+        margin: 0 auto 25px;
+        width: 240px;
+    }
+
+    .footer-right p {
+        font-size: 15px;
+    }
+}
+
+/* Mobile lớn */
+@media (max-width: 600px) {
+
+    .footer-logo {
+        width: 220px;
+    }
+
+    .footer-right p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .footer-copy {
+        font-size: 12px;
+    }
+}
+
+/* Mobile nhỏ */
+@media (max-width: 390px) {
+    .footer-logo {
+        width: 180px;
+    }
+
+    .footer-right p {
+        font-size: 13px;
+    }
+}
+
+
+/* ==================================
+   COUNTDOWN — BẢN SIÊU ĐẬM + NỔI MAX
+================================== */
+
+.footer-countdown-box {
+    position: relative;
+    z-index: 5 !important;
+    text-align: center;
+    margin-right: 150px;
+    margin-bottom: 25px;
+    color: #f7eaea;
+   
+}
+
+
+/* TIÊU ĐỀ */
+.countdown-title {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-shadow: 0 0 12px rgba(0,0,0,0.8);
+    margin-bottom: 15px;
+}
+
+/* Layout */
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+}
+
+/* HỘP GIỜ */
+.time-box {
+    background: rgba(255,255,255,0.28);  /* sáng hơn nên rõ hơn */
+    padding: 18px 22px;
+    width: 90px;
+    border-radius: 14px;
+
+    border: 2px solid rgba(255,255,255,0.85); /* viền sáng mạnh */
+    box-shadow:
+        0 8px 22px rgba(0,0,0,0.35),      /* bóng shadow mạnh */
+        0 0 14px rgba(255,255,255,0.38); /* glow trắng nhẹ */
+
+    backdrop-filter: blur(7px); /* hiệu ứng kính mờ sang */
+}
+
+/* SỐ LỚN */
+.time-box span {
+    font-size: 34px;
+    font-weight: 900;
+    display: block;
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(0,0,0,0.6);
+    letter-spacing: 1px;
+}
+
+/* CHỮ NHỎ */
+.time-box label {
+    font-size: 14px;
+    font-weight: 800;
+    margin-top: 6px;
+    opacity: 1;
+    color: #fff;
+    text-shadow: 0 0 6px rgba(0,0,0,0.55);
+}
+
+/* ===============================
+   RESPONSIVE MOBILE
+================================ */
+@media(max-width: 480px){
+    .countdown-timer {
+        gap: 12px;
+    }
+
+    .time-box {
+        padding: 12px 14px;
+        width: 70px;
+        border-width: 1.5px;
+    }
+
+    .time-box span {
+        font-size: 26px;
+    }
+
+    .countdown-title {
+        font-size: 20px;
+    }
+}
+
+/* ===============================
+   KẾT THÚC COUNTDOWN
+================================ */
